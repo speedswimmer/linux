@@ -1,0 +1,24 @@
+Docker Commands
+
+docker --version					shows current installed Docker version
+
+docker ps						show all running Docker containers
+docker ps -a						show all running and exited containers
+
+docker run -d -t --name <containername> <image name>	create container with specific image and give it a name
+
+docker exec -it <container id> bash			connect to container bash shellhot
+docker exec -it <container id> sh			connect to container shell
+
+exit							leave connected container
+
+docker pull <image name>				pull image for docker container
+
+docker stop <container id>				stops a running container
+
+docker kill <container id>				kill the container - no time for gracefull shutdownd 
+
+docker rm
+
+docker container ls -a					list of all installed container
+docker container rm <container ID>			delete container
