@@ -10,7 +10,7 @@ docker run -d -t --name <containername> <image name>	create container with speci
 docker exec -it <container id> bash			connect to container bash shellhot
 docker exec -it <container id> sh			connect to container shell
 
-exit							leave connected container
+exit							                      leave connected container
 
 docker pull <image name>				        pull image for docker container
 
