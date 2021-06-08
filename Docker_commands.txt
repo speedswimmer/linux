@@ -1,4 +1,4 @@
-Docker Commands
+#Docker Commands
 
 docker --version					shows current installed Docker version
 
@@ -8,7 +8,7 @@ docker ps -a						  show all running and exited containers
 docker run -d -t --name <containername> <image name>	create container with specific image and give it a name
 
 docker exec -it <container id> bash			connect to container bash shellhot
-docker exec -it <container id> sh			connect to container shell
+docker exec -it <container id> sh 			connect to container shell
 
 exit							                      leave connected container
 
