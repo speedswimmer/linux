@@ -1,8 +1,10 @@
+#Sending Email with Googlemail-Account
 import os
 import time
 import smtplib
 from email.message import EmailMessage
 
+#User Email-Account data needs to be stored in environmental variables
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
