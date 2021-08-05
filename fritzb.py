@@ -6,7 +6,7 @@ from fritzconnection.lib.fritzhosts import FritzHosts
 from fritzconnection.lib.fritzstatus import FritzStatus
 
 try:
-    fc = FritzConnection(address='192.168.178.1', password='MultiSyncV554Q', use_tls=True)
+    fc = FritzConnection(address='ROUTER-IP4 ADDRESS', password='****', use_tls=True)
 except FritzConnectionException:
     print("Can't connect to FritzBox!")
     sys.exit(0)
