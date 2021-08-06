@@ -14,7 +14,7 @@ wget [url from RAW-File]: wget https://raw.githubusercontent.com/speedswimmer/li
 
 Set environment variables in linux for email-address and email passwort for example:
 $ export VAR1="myemail@t-online.de"
-$ export VAR2="Password for EMail"
+$ export VAR2="Password for Email-Account"
 Get environment variable values in python:
 $ import os
 $ os.environ.get('VAR1')
