@@ -21,8 +21,6 @@ else:
 
 def getFritzStatus():
     fs = FritzStatus(fc)
-    # monitor = fs.get_monitor_data()
-    # print(monitor)
     print("*************** Status FritzBox! ********************\n")
     f.write("*************** Status FritzBox! ********************\n")
     print("FritzBox Model: %s" % (fs.modelname))
@@ -59,6 +57,7 @@ def getHostStatus():
     f.write("**********************************\n")
     print("Übersicht der bekannten Hosts:")
     print("Es sind %s Hosts bekannt!\n" %(len(hosts)))
+    f.write("Es sind %s Hosts bekannt!\n" %(len(hosts)))
     print("Folgende %s Hosts sind aktive im Netzwerk:" %(len(activehosts)))
     f.write("Folgende %s Hosts sind aktive im Netzwerk:" %(len(activehosts))+"\n")
     print("IP-Address         Name                      Status")
