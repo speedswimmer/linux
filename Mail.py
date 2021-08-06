@@ -1,7 +1,6 @@
 import os
 import time
 import smtplib
-#import imghdr
 from email.message import EmailMessage
 
 
@@ -20,9 +19,8 @@ def send_mail():
     msg['To'] = receipient
     msg.set_content('Image attached...\n\nCU, BigBrother')
 
-    with open("Fritzbox/log.txt", 'rb') as f:
+    with open("/home/pi/Scripts/log.txt", 'rb') as f:
         file_data = f.read()
-        #file_type = imghdr.what(f.name)
         file_name = f.name
 
     #msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name
