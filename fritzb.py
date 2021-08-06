@@ -1,3 +1,4 @@
+# Install fritzconnection with pip3 install fritzconnection on Rpi
 import time, sys, os
 from Mail import send_mail
 from fritzconnection import FritzConnection
@@ -6,16 +7,16 @@ from fritzconnection.lib.fritzhosts import FritzHosts
 from fritzconnection.lib.fritzstatus import FritzStatus
 
 try:
-    fc = FritzConnection(address='ROUTER-IP4 ADDRESS', password='****', use_tls=True)
+    fc = FritzConnection(address='192.168.178.1', password='****', use_tls=True)
 except FritzConnectionException:
     print("Can't connect to FritzBox!")
     sys.exit(0)
     
-if os.path.exists("Fritzbox/log.txt") == True:
-    f=open("Fritzbox/log.txt", "a")
+if os.path.exists("/home/pi/Scripts/log.txt") == True:
+    f=open("/home/pi/Scripts/log.txt", "a")
     f.write(time.strftime("\n%d.%m.%y - %H:%M:%S\n"))
 else:
-    f=open("Fritzbox/log.txt", "x")
+    f=open("/home/pi/Scripts/log.txt", "w")
     f.write(time.strftime("%d.%m.%y - %H:%M:%S\n"))
 
 def getFritzStatus():
