@@ -8,7 +8,7 @@ $ pip3 install fritzconnection
 
 Download files like python scripts from Github:
 cd into the correct folder e.g. cd /home/pi/Scripts/
-wget [url from RAW-File]
+wget [url from RAW-File]: wget https://raw.githubusercontent.com/speedswimmer/linux/main/Readme.txt
 
 *********** To get Mail.py working *************************************************
 
@@ -18,4 +18,3 @@ $ export VAR2="Password for EMail"
 Get environment variable values in python:
 $ import os
 $ os.environ.get('VAR1')
-
