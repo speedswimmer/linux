@@ -10,14 +10,13 @@ def send_mail():
     EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
     receipient = "***"
-    #num_e = int(input("How many Emails to send? "))
 
 # defining Email body
     msg = EmailMessage()
-    msg['Subject'] = 'FritzBox! Status-Update'
+    msg['Subject'] = 'FritzBox! HU Status-Update'
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = receipient
-    msg.set_content('Image attached...\n\nCU, BigBrother')
+    msg.set_content('Image attached...\n\nCU, Secure_Guard')
 
     with open("/home/pi/Scripts/log.txt", 'rb') as f:
         file_data = f.read()
