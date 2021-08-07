@@ -6,13 +6,15 @@ $ pip3 install fritzconnection
 
 *********** Download of Python Scripts from Github *********************************
 
-Download files like python scripts from Github:
-cd into the correct folder e.g. cd /home/pi/Scripts/
+Download python scripts from Github:
+cd into the correct destination folder e.g. cd /home/pi/Scripts/
 wget [url from RAW-File]: wget https://raw.githubusercontent.com/speedswimmer/linux/main/Readme.txt
+wget https://raw.githubusercontent.com/speedswimmer/linux/main/Mail.py
+wget https://raw.githubusercontent.com/speedswimmer/linux/main/fritzb.py
 
 *********** To get Mail.py working *************************************************
 
-Set environment variables in linux for email-address and email passwort for example:
+Set environment variables in Linux to store email-address and email-passwort for example:
 $ export VAR1="myemail@t-online.de"
 $ export VAR2="Password for Email-Account"
 Get environment variable values in python:
