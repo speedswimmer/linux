@@ -3,7 +3,6 @@ import time
 import smtplib
 from email.message import EmailMessage
 
-
 def send_mail():
     #grap environment variables where data is stored
     EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
