@@ -20,3 +20,8 @@ $ export VAR2="Password for Email-Account"
 Get environment variable values in python:
 $ import os
 $ os.environ.get('VAR1')
+
+************* Schedule regular execution of python scripts via crontab *************
+crontab -e
+0 */1 * * * python3 /home/pi/Scripts/fritzb.py
+1 11,17,23 * * * python3 /home/pi/Scripts/Mail.py
