@@ -10,15 +10,17 @@ def send_mail():
     EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
     receipient = "***"
+    today = (time.strftime("%d-%m-%y"))
+    daily_logfile = ("/home/pi/Scripts/" + today + "-log.txt")
 
 # defining Email body
     msg = EmailMessage()
     msg['Subject'] = 'FritzBox! HU Status-Update'
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = receipient
-    msg.set_content('Image attached...\n\nCU, Secure_Guard')
+    msg.set_content('Image attached...\n\nCU, SecureGuard')
 
-    with open("/home/pi/Scripts/log.txt", 'rb') as f:
+    with open(daily_logfile, 'rb') as f:
         file_data = f.read()
         file_name = f.name
 
@@ -30,3 +32,4 @@ def send_mail():
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
+send_mail()
