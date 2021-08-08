@@ -11,27 +11,32 @@ try:
 except FritzConnectionException:
     print("Can't connect to FritzBox!")
     sys.exit(0)
-    
-if os.path.exists("/home/pi/Scripts/log.txt") == True:
-    f=open("/home/pi/Scripts/log.txt", "a")
+
+today = (time.strftime("%d-%m-%y"))
+daily_logfile = ("/home/pi/Scripts/" + today + "-log.txt")
+
+if os.path.exists(daily_logfile) == True:
+    f=open(daily_logfile, "a")
     f.write(time.strftime("\n%d.%m.%y - %H:%M:%S\n"))
 else:
-    f=open("/home/pi/Scripts/log.txt", "w")
+    f=open(daily_logfile, "w")
     f.write(time.strftime("%d.%m.%y - %H:%M:%S\n"))
 
 def getFritzStatus():
     fs = FritzStatus(fc)
     print("*************** Status FritzBox! ********************\n")
     f.write("*************** Status FritzBox! ********************\n")
+    print("*************** Status FritzBox! *****************\n")
+    f.write("*************** Status FritzBox! ****************\n")
     print("FritzBox Model: %s" % (fs.modelname))
-    f.write("FritzBox Model: %s" % (fs.modelname))
-    print("FritzBox is linked: ",fs.is_linked)
-    f.write("FritzBox is linked: ",fs.is_linked)
-    print("FritzBox is connected:", fs.is_connected)
-    f.write("FritzBox is connected:", fs.is_connected)
-    print("FritzBox uptime:", fs.str_uptime)
-    f.write("FritzBox uptime:", fs.str_uptime)
-    print("FritzBox external IP4: %s\n" %(fs.external_ip))
+    f.write("FritzBox Model: %s\n" % (fs.modelname))
+    print("FritzBox is linked: %s" %(fs.is_linked))
+    f.write("FritzBox is linked: %s\n" %(fs.is_linked))
+    print("FritzBox is connected: %s" %(fs.is_connected))
+    f.write("FritzBox is connected: %s\n" %(fs.is_connected))
+    print("FritzBox uptime: %s" %(fs.str_uptime))
+    f.write("FritzBox uptime: %s\n" %(fs.str_uptime))
+    print("FritzBox external IP4: %s" %(fs.external_ip))
     f.write("FritzBox external IP4: %s\n" %(fs.external_ip))
 
 def getWLANstatus():
@@ -53,8 +58,8 @@ def getHostStatus():
     fh = FritzHosts(fc)
     hosts = fh.get_hosts_info()
     activehosts = fh.get_active_hosts()
-    print("**********************************\n")
-    f.write("**********************************\n")
+    print("*****************************************\n")
+    f.write("******************************************\n")
     print("Übersicht der bekannten Hosts:")
     print("Es sind %s Hosts bekannt!\n" %(len(hosts)))
     f.write("Es sind %s Hosts bekannt!\n" %(len(hosts)))
@@ -74,6 +79,7 @@ def getHostStatus():
             f.write(f"{ipaddress:18} {hostname:25} - {hoststatus}\n")
 
 #getWLANstatus()
+getFritzStatus()
 getHostStatus()
 f.close()
-send_mail()
+#send_mail()
