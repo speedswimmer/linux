@@ -24,7 +24,7 @@ def attack():
         print(attack_num)
         s.close()
 
-for i in range(11):
+for i in range(501):
     thread = threading.Thread(target=attack)
     print("Thread", i, "started!")
     thread.start()
