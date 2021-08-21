@@ -2,7 +2,7 @@ import socket
 import threading
 import keyboard, sys
 
-target = "72.14.177.48"
+target = "xx.xx.xx.xx"
 fake_ip ="182.21.20.22"
 
 port = 80
