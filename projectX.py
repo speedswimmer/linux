@@ -4,7 +4,16 @@ import socket
 import threading
 import sys
 import random
-from termcolor import colored, cprint
+import os
+#from termcolor import colored, cprint
+
+try:
+    from termcolor import colored, cprint
+    cprint('[+] termcolor library already installed...', 'green')
+except Exception as e:
+    print('[-]', e)
+    os.system('pip3 install termcolor')
+    print('[!] I have installed the necessary libraries for you!')
 
 def fk_ip():
     rand = []
@@ -39,7 +48,7 @@ def attack():
         print(attack_num)
         s.close()
 
-for i in range(11):
+for i in range(2):
     try:
         thread = threading.Thread(target=attack)
         print("Thread", i, "started!")
