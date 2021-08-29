@@ -1,3 +1,8 @@
+To install PIP (please update repositories before: $sudo apt-get update):
+
+PIP for python2: $sudo apt-get install python-pip
+PIP for python3: $sudo apt-get install python3-pip
+
 *********** Installation of fritzconnection python module on Raspberrypi ***********
 
 fritzconnection python api needs to be installed on Raspberrypi beforehand.
