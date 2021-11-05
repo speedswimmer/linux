@@ -16,6 +16,7 @@ cd into the correct destination folder e.g. cd /home/pi/Scripts/
 wget [url from RAW-File]: wget https://raw.githubusercontent.com/speedswimmer/linux/main/Readme.txt
 wget https://raw.githubusercontent.com/speedswimmer/linux/main/Mail.py
 wget https://raw.githubusercontent.com/speedswimmer/linux/main/fritzb.py
+wget https://raw.githubusercontent.com/speedswimmer/linux/main/file.py
 
 *********** To get Mail.py working *************************************************
 
