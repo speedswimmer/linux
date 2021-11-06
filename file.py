@@ -1,5 +1,8 @@
 #Script to handle logfiles on server. Script is scheduled to run on a regular bases e.g. each month or so
 import os, datetime, shutil
+import logging
+
+logging.basicConfig(filename='logging.log', filemode = 'a', level=logging.DEBUG, style="{" ,format = "{asctime} [{levelname:8}] {message}", datefmt="%d.%m.%Y, %H:%M:%S")
 
 print(os.getcwd())
 source_path = '/home/jarvis/Scripts/data/'
@@ -38,6 +41,7 @@ for i in range(len(container)):
         else:
                 print('Create folder {}...'.format(destination+folder_name))
                 os.mkdir(destination + folder_name)
+                logging.info('Directory {} created'.format(folder_name))
 
 # loop to copy files into correct folder
 for element in container:
@@ -50,6 +54,10 @@ for element in container:
                                 try:
                                         shutil.move(os.path.join(source_path, i), os.path.join(place, i))
                                         print('Move {} --> {}'.format(i, place))
+                                        logging.info('Move {} --> {}'.format(i,place))
                                 except:
                                         print('Error happended!')
+                                        logging.error('File could not be moved!')
                                         continue
+
+logging.shutdown
