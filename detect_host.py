@@ -1,5 +1,4 @@
 import time, sys, os
-from Mail import send_mail
 from fritzconnection import FritzConnection
 from fritzconnection.core.exceptions import ActionError, FritzConnectionException, FritzServiceError
 from fritzconnection.lib.fritzhosts import FritzHosts
@@ -8,9 +7,8 @@ from fritzconnection.lib.fritzstatus import FritzStatus
 print("Program started, please wait...")
 
 try:
-    fc = FritzConnection(address='192.168.178.1', password='Sprosse2102', use_tls=True)
+    fc = FritzConnection(address='192.168.178.1', password='password', use_tls=True)
 except FritzConnectionException:
-    print("Can't connect to FritzBox!")
     sys.exit(0)
 
 today = (time.strftime("%d-%m-%y"))
@@ -59,8 +57,7 @@ while True:
     print("Matthias prescence now:", status_suspect_now)
     
     if status_suspect_now != status_suspect_was:
-        print("Status changed! - Presence={}, {}!\n".format(status_suspect_now, time_stamp))
+#       print("Status changed! - Presence={}, {}!\n".format(status_suspect_now, time_stamp))
         f.write("Status changed! - Presence={}, {}!\n".format(status_suspect_now, time_stamp))
     status_suspect_was = status_suspect_now
-    time.sleep(15)
-#send_mail()
+    time.sleep(60)
