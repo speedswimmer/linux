@@ -17,6 +17,7 @@ wget [url from RAW-File]: wget https://raw.githubusercontent.com/speedswimmer/li
 wget https://raw.githubusercontent.com/speedswimmer/linux/main/Mail.py
 wget https://raw.githubusercontent.com/speedswimmer/linux/main/fritzb.py
 wget https://raw.githubusercontent.com/speedswimmer/linux/main/file.py
+wget https://raw.githubusercontent.com/speedswimmer/linux/main/detect_host.py
 
 *********** To get Mail.py working *************************************************
 
