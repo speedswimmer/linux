@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(filename='logging.log', filemode = 'a', level=logging.DEBUG, style="{" ,format = "{asctime} [{levelname:8}] {message}", datefmt="%d.%m.%Y, %H:%M:%S")
 
-print(os.getcwd())
+logging.info('Script executed!')
 source_path = '/home/jarvis/Scripts/data/'
 destination = '/home/jarvis/Scripts/archive/'
 
@@ -39,7 +39,7 @@ for i in range(len(container)):
         if os.path.exists(destination+folder_name) == True:
                 continue
         else:
-                print('Create folder {}...'.format(destination+folder_name))
+#                print('Create folder {}...'.format(destination+folder_name))
                 os.mkdir(destination + folder_name)
                 logging.info('Directory {} created'.format(folder_name))
 
@@ -48,15 +48,15 @@ for element in container:
         for i in file_list:
                 if i[3:5] == element:
                         if i == logfile_2day:
-                                print("File {} won't be copied!".format(i))
+#                                print("File {} won't be copied!".format(i))
                         else:
                                 place = destination + element + '_21'
                                 try:
                                         shutil.move(os.path.join(source_path, i), os.path.join(place, i))
-                                        print('Move {} --> {}'.format(i, place))
+#                                        print('Move {} --> {}'.format(i, place))
                                         logging.info('Move {} --> {}'.format(i,place))
                                 except:
-                                        print('Error happended!')
+#                                        print('Error happended!')
                                         logging.error('File could not be moved!')
                                         continue
 
