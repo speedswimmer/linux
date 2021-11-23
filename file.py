@@ -4,7 +4,6 @@ import logging
 
 logging.basicConfig(filename='logging.log', filemode = 'a', level=logging.DEBUG, style="{" ,format = "{asctime} [{levelname:8}] {message}", datefmt="%d.%m.%Y, %H:%M:%S")
 
-#print(os.getcwd())
 source_path = '/home/pi/Scripts/data/'
 destination = '/home/pi/Scripts/data_old/'
 
