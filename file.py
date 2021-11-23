@@ -48,8 +48,8 @@ for element in container:
         for i in file_list:
                 if i[3:5] == element:
                         if i == logfile_2day:
-
-                                print("File {} won't be copied!".format(i))
+                                logging.info("File {} won't be copied!".format(i))
+#                                print("File {} won't be copied!".format(i))
                         else:
                                 place = destination + element + '_21'
                                 try:
