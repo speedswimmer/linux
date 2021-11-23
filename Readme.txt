@@ -33,4 +33,4 @@ crontab -e
 0 */1 * * * python3 /home/pi/Scripts/fritzb.py
 1 11,17,23 * * * python3 /home/pi/Scripts/Mail.py
 
-sudo service cron reload
+sudo service cron reload / sudo service cron restart
