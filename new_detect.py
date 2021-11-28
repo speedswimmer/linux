@@ -40,9 +40,7 @@ status_suspect_was = False
 path = os.getcwd()
 file_liste = os.listdir('home/jarvis/Scripts')
 if 'hosts.txt' in file_liste:
-#    print(os.path.abspath(path + '\hosts.txt'))
-#    datei = os.path.abspath(path + '\hosts.txt')
-    datei = '/home/jarivs/Scripts/hosts.txt'
+    datei = '/home/jarvis/Scripts/hosts.txt'
     with open(datei, 'r') as f:
         content = f.read().strip()
         if content == 'False':
@@ -51,8 +49,7 @@ if 'hosts.txt' in file_liste:
             status_suspect_was = True
 
 else:
-#    datei = os.path.abspath(path + '\hosts.txt')
-    datei = '/home/jarvis/Scripts/host.txt'
+    datei = '/home/jarvis/Scripts/hosts.txt'
     with open(datei, 'w') as f:
         f.write('False')
 
