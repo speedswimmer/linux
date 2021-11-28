@@ -1,5 +1,4 @@
 import os, sys, time
-
 from fritzconnection import FritzConnection
 from fritzconnection.core.exceptions import FritzConnectionException
 from fritzconnection.lib.fritzhosts import FritzHosts
@@ -23,12 +22,11 @@ def getactiveHosts():
     for i in range(0, len(activehosts)-1):
         hostname = activehosts[i]["name"]
         host_entry.append(hostname)
-    
+        
     if 'iPh-HartmannM' in host_entry:
         status_suspect_now = True
     else:
         status_suspect_now = False
-
     return status_suspect_now   
 
 status_suspect_now = getactiveHosts()
