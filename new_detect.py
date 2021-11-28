@@ -10,7 +10,7 @@ def hostlog(content):
 
 def getactiveHosts():
     try:
-        fc = FritzConnection(address="192.168.178.1", password="Sprosse2102", use_tls=True)
+        fc = FritzConnection(address="192.168.178.1", password="", use_tls=True)
     except FritzConnectionException:
         sys.exit()
     
