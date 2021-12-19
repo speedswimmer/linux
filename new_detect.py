@@ -36,9 +36,9 @@ status_suspect_was = False
 
 #print('----- File configuration ------')
 path = os.getcwd()
-file_liste = os.listdir('home/jarvis/Scripts')
+file_liste = os.listdir('/home/pi/Scripts')
 if 'hosts.txt' in file_liste:
-    datei = '/home/jarvis/Scripts/hosts.txt'
+    datei = '/home/pi/Scripts/hosts.txt'
     with open(datei, 'r') as f:
         content = f.read().strip()
         if content == 'False':
@@ -47,7 +47,7 @@ if 'hosts.txt' in file_liste:
             status_suspect_was = True
 
 else:
-    datei = '/home/jarvis/Scripts/hosts.txt'
+    datei = '/home/pi/Scripts/hosts.txt'
     with open(datei, 'w') as f:
         f.write('False')
 
