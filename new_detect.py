@@ -2,6 +2,7 @@ import os, sys, time
 from fritzconnection import FritzConnection
 from fritzconnection.core.exceptions import FritzConnectionException
 from fritzconnection.lib.fritzhosts import FritzHosts
+from messaging import send_email
 
 def hostlog(content):
     with open('/home/jarvis/Scripts/hostlog.txt','a') as y:
@@ -67,8 +68,10 @@ else:
 #    print("Alert - presence changed! Now supect is in building:", status_suspect_now)
     if status_suspect_now == True:
         presence = 'On Site'
+        send_email('Person has entered the building! {}'.format(time_stamp))
     if status_suspect_now == False:
         presence = 'Off Site'
+        send_email('Person has left the building! {}'.format(time_stamp))
     message = (time_stamp + ' [Alert] - presence changed! ' + presence)
     hostlog(message)
 
