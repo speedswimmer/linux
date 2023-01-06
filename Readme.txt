@@ -35,3 +35,6 @@ crontab -e
 1 11,17,23 * * * python3 /home/pi/Scripts/Mail.py
 
 sudo service cron reload / sudo service cron restart
+
+************** Add a string to a file with crontab **********
+@reboot data >> /home/pi/Scripts/rblog.txt
