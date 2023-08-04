@@ -1,4 +1,4 @@
-# Script Version 2 with Fake-IP funtion and coloured command line output
+# Script Version 2 with Fake-IP function and coloured command line output
 
 import socket
 import threading
