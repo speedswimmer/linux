@@ -36,5 +36,5 @@ crontab -e
 
 sudo service cron reload / sudo service cron restart
 
-************** Add a string to a file with crontab **********
-@reboot data >> /home/pi/Scripts/rblog.txt
+************** Add date to a text file at reboot with crontab **********
+@reboot date >> /home/pi/Scripts/rblog.txt
