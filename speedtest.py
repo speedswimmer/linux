@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""Script measures the internet speed"""
 import time
 import requests
 import random
