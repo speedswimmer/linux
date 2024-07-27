@@ -37,7 +37,7 @@ def measure_upload_speed(url, data):
 
 def log_speed(download_speed, upload_speed):
     """Protokolliere die gemessenen Geschwindigkeiten"""
-    with open("speed_log.txt", "a") as log_file:
+    with open("speedlog.txt", "a") as log_file:
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_file.write(f"{timestamp}, Download: {download_speed:.2f} Mbps, Upload: {upload_speed:.2f} Mbps\n")
 
